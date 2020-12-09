@@ -138,7 +138,7 @@
     this.min.textContent = minMean;
     this.sec.textContent = secMean;
 
-    if (leftTime == 0) {
+    if (leftTime == 0 && this.sec.textContent == '00') {
       clearInterval(this.setIdSec);
     }
   }
