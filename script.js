@@ -23,7 +23,6 @@
     return this;
   }
   CreateEmojiArr.prototype.dubleNum = function (number) {
-    /* let emojiForGame = new Array(number); */ // emoji for DOM
 
     let emojiForGame = this.arr.slice(0, number);
 
@@ -38,8 +37,6 @@
 
   //playing field with methods
   let MemoryGame = function (fieldGame) {
-
-
 
     this.clickPoint = document.createElement('div');
 
@@ -166,7 +163,6 @@
     timer.setTime();
     //assign emoji to cards
     document.addEventListener("DOMContentLoaded", function () {
-      /*  let emojiForGame = (new CreateEmojiArr(emojiBase)).shuffle().dubleNum(numberCards).shuffle(); */
       let emojiForGame = (new CreateEmojiArr(emojiBase)).shuffle().dubleNum(numberCards).shuffle();
       //assign emoji to cards
       this.setCard(this.cardsContent, emojiForGame.arr);
@@ -223,7 +219,6 @@
       memoryGame.closeAllCards();
       timer.setTime();
       memoryGame.choiceCard.length = 0;
-      /*  let emojiForGame = (new CreateEmojiArr(emojiBase)).shuffle().dubleNum(numberCards).shuffle(); */
       let emojiForGame = (new CreateEmojiArr(emojiBase)).shuffle().dubleNum(numberCards).shuffle();
       //assign emoji to cards
       memoryGame.setCard(memoryGame.cardsContent, emojiForGame.arr);

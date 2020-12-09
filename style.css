@@ -104,7 +104,6 @@ html, body {
 }
 
 .click-point {
-  /*  opacity: 0; */
   position: absolute;
   z-index: 1000;
   height: 3em;
