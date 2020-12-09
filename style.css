@@ -1,0 +1,217 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #434344;
+  box-sizing: border-box;
+}
+
+html, body {
+  background-color: #CFD0CF;
+}
+
+.game-memory, .game-memory_ {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 122px auto;
+  justify-content: center;
+  min-width: fit-content;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.game-memory__name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 42px;
+  line-height: 47px;
+}
+
+.game-memory__field {
+  display: grid;
+  grid-template-columns: 130px 130px 130px 130px;
+  grid-template-rows: 130px 130px 130px;
+  grid-gap: 25px;
+  list-style-type: none;
+  cursor: pointer;
+}
+
+.game-memory__scene {
+  perspective: 600px;
+}
+
+.game-memory__field__card {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  border-radius: 9px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.game-memory__field__card__face-down, .game-memory__field__card__face-up {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  border-radius: 9px;
+}
+
+.game-memory__field__card__face-down {
+  background: linear-gradient(45deg, #22AB93, #19668D);
+  border: 5px solid white;
+}
+
+.game-memory__field__card__face-up {
+  transform: rotateY(180deg);
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-memory__field__card__content {
+  font-size: 75px;
+}
+
+.face-up {
+  animation: turnOverUp 0.4s forwards;
+}
+
+@keyframes turnOverUp {
+  to {
+    transform: rotateY(180deg);
+  }
+}
+
+.face-down {
+  animation: turnOverDown 0.4s forwards;
+}
+
+@keyframes turnOverDown {
+  from {
+    transform: rotateY(180deg);
+  }
+  to {
+    transform: rotateY(0deg);
+  }
+}
+
+.click-point {
+  /*  opacity: 0; */
+  position: absolute;
+  z-index: 1000;
+  height: 3em;
+  width: 3em;
+  border: 3px solid black;
+  border-radius: 2em;
+}
+
+.equal>.game-memory__field__card__face-up {
+  background-color: #5AD66F;
+}
+
+.unEqual>.game-memory__field__card__face-up {
+  background-color: #F44336;
+}
+
+.timer {
+  margin: 30px auto 0px;
+  font-size: 32px;
+  line-height: 36px;
+  font-weight: 600;
+}
+
+.pop-up.show{
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.pop-up.hide{
+  display: none;
+}
+
+.pop-up__content {
+  display: inline-block;
+  min-width: 350px;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.pop-up__content__message {
+  font-size: 48px;
+  font-weight: 600;
+  text-align: center;
+  margin: 30px 0 40px;
+}
+
+.pop-up__content__message :nth-child(1) {
+  display: inline-block;
+  transform-origin: bottom center;
+  animation: scaleABC 0.6s -0.2s infinite alternate;
+}
+
+.pop-up__content__message :nth-child(2) {
+  display: inline-block;
+  transform-origin: bottom center;
+  animation: scaleABC 0.6s -0.4s infinite alternate;
+}
+
+.pop-up__content__message :nth-child(3) {
+  display: inline-block;
+  transform-origin: bottom center;
+  animation: scaleABC 0.6s -0.6s infinite alternate;
+}
+
+.pop-up__content__message :nth-child(4) {
+  display: inline-block;
+  transform-origin: bottom center;
+  animation: scaleABC 0.6s -0.8s infinite alternate;
+}
+
+@keyframes scaleABC {
+  0% {
+    transform: scaleY(0.7);
+  }
+
+  100%{
+    transform: scaleY(1.7);
+  }
+}
+
+.pop-up__button-play {
+  margin-bottom: 30px;
+  height: 40px;
+  width: auto;
+  background: linear-gradient(90deg, #19668D, #22AB93);
+  display: inline-block;
+  border-radius: 9px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px black;
+}
+.pop-up__button-play:active{
+  box-shadow: -1px -1px 1px black;
+}
+
+.pop-up__button-play__text {
+  color: white;
+  font-size: 20px;
+  margin: 0 30px;
+  line-height: 40px;
+}

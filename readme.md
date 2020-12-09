@@ -1,0 +1,1 @@
+Memori has a deck of cards with paired images. The deck is laid out in random order, face down. The player can open 2 cards in one move. If a “pair” was formed at the opening of the card, it remains open. The game continues until the entire field is open.
